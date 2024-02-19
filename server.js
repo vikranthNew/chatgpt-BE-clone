@@ -8,7 +8,9 @@ const app = express();
 const port = 3001;
 
 app.use(bodyParser.json());
-app.use(cors()); // Use the cors middleware
+app.use(cors({
+  origin: "*",
+})); // Use the cors middleware
 
 app.post('/generate-response', async (req, res) => {
   const userInput = req.body.input;
